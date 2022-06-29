@@ -36,7 +36,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 2.5rem;
+  margin: 2.5rem 0;
 }
 
 header h1 {
@@ -82,12 +82,7 @@ table * {
   color: var(--text-color);
 }
 
-td.user img {
-  width: 5rem;
-  height: 5rem;
-  object-fit: cover;
-  border-radius: 50%;
-}
+
 
 table th {
   background-color: var(--primary-color);
@@ -123,6 +118,13 @@ td.user {
   gap: 1rem;
 }
 
+td.user img {
+  width: 5rem;
+  height: 5rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
 td.user a {
   text-decoration: none;
 }
@@ -131,8 +133,7 @@ td.user a p {
   font-size: bold;
 }
 
-td.remove {
-  font-size: x-large;
+button.remove {
   background: none;
   border: none;
   color: red;
