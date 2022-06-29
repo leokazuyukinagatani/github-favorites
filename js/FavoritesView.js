@@ -26,10 +26,25 @@ class Favorites {
       ('@github-favorites:')) || [];
   }
 
+  save() {
+    localStorage.setItem('@github-favorites:', JSON.stringify(this.entries));
+  }
+
   async add(username) {
-    console.log(username);
-    const user = await GithubUser.search(username);
-    console.log(user);
+    try {
+      const user = await GithubUser.search(username);
+      
+      if(user.login === undefined) {
+        throw new Error("Usuário não encontrado");
+      }
+
+      this.entries = [user, ...this.entries];
+      this.update();
+      this.save();
+
+    } catch(error){
+      alert(error.message);
+    }
   }
 
   delete(user) {
@@ -38,6 +53,8 @@ class Favorites {
     
     this.entries = filteredEntries;
     this.update();
+    this.save();
+
   }
 
 }
