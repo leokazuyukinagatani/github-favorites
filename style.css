@@ -58,7 +58,8 @@ header h1 {
 
 .search button {
   background-color: var(--primary-color);
-  border-radius: 0 .4rem 0 .4rem;
+  border-radius: 0 .4rem .4rem 0;
+  color: white;
   height: 3.2rem;
   border: none;
   padding: 0 1rem;
@@ -67,6 +68,7 @@ header h1 {
 
 .search button:hover {
   filter: brightness(1.2);
+  color: #303030;
 }
 
 table {
@@ -127,6 +129,14 @@ td.user a {
 
 td.user a p {
   font-size: bold;
+}
+
+td.remove {
+  font-size: x-large;
+  background: none;
+  border: none;
+  color: red;
+  cursor: pointer;
 }
 
 .sr-only {
